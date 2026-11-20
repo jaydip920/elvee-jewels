@@ -1,0 +1,12 @@
+# OS / editor clutter
+.DS_Store
+Thumbs.db
+*.swp
+*~
+
+# Logs
+*.log
+
+# Local environment / secrets
+.env
+.env.*
