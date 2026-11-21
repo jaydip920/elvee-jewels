@@ -21,6 +21,7 @@ Or simply open `index.html` in a browser (a local server is recommended so relat
 | `contact.html` | Contact Us |
 | `terms.html` | Terms and Conditions |
 | `customer-services.html` | Customer Services |
+| `b2b.html` | For Business / B2B RFQ |
 | `appointment.html` | Book an Appointment |
 | `customize.html` | Customize |
 | `faq.html` | FAQ |
@@ -47,7 +48,9 @@ Also included: `robots.txt` and `sitemap.xml`.
 - **SEO basics** — per-page titles, meta descriptions, Open Graph tags, JSON-LD, robots.txt and sitemap.xml.
 - **Forms that went nowhere** — forms validate inline and open the visitor's email app with the message prefilled to `info@elvee.in`. No backend required.
 
-Lighthouse on the homepage: **Accessibility 100, Best Practices 100, SEO 100**, with no console errors across all nine pages.
+The **For Business** page adds partnership models, supply formats, a five-step process, B2B FAQs, a catalogue request CTA and a structured RFQ form covering company, market, category, purity, volume, target price, branding and timeline.
+
+Lighthouse on the homepage and B2B page: **Accessibility 100, Best Practices 100, SEO 100**, with no console errors across all ten pages.
 
 ## Animations added
 
@@ -71,5 +74,6 @@ All motion is disabled automatically when the visitor has **Reduce Motion** enab
 - Brand colours, fonts and the corner-radius scale (`--radius-sm: 8px`, `--radius-md: 16px`, `--radius-lg: 24px`) live in the `:root` block at the top of `assets/css/styles.css`. Small buttons/controls use 8px, standard buttons and framed images 16px, and large images/hero/social tiles 24px. Circular controls intentionally keep `50%`.
 - Contact details appear in `tools/build.js` (`brand` object) — edit there and regenerate.
 - The Terms page contains clearly marked placeholder legal copy; replace it with approved wording before launch.
+- The B2B RFQ is email-based. Partner accounts, gated price lists and order tracking would require a backend or a hosted form/CRM service.
 - Social links currently point to the platform homepages. Replace them with the real Alvee profile URLs in `tools/build.js`.
 - If deploying under a subpath, adjust asset paths and the `url` values in `sitemap.xml`.

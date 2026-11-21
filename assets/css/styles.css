@@ -760,6 +760,12 @@ svg {
   font-size: clamp(2rem, 4vw, 3.4rem);
   line-height: 1.25;
 }
+.quote-band__actions {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 14px;
+}
 .cta-band {
   padding: 70px 0;
   background: var(--ink);
@@ -771,6 +777,7 @@ svg {
   justify-content: space-between;
   gap: 30px;
 }
+.cta-band__actions { display: flex; flex-wrap: wrap; gap: 14px; }
 .cta-band h2 { margin: 0; font-size: clamp(1.9rem, 3.4vw, 2.7rem); }
 
 /* -------------------------- Social gallery ----------------------------- */
@@ -886,6 +893,7 @@ svg {
 }
 .form-card--wide { max-width: 900px; margin-inline: auto; }
 .form-card__title { margin: 0 0 28px; font-size: 2rem; }
+.form-card__intro { margin: -14px 0 26px; color: var(--muted); }
 .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 18px; }
 .field { margin-bottom: 18px; }
 .field label {
@@ -1268,12 +1276,13 @@ main { position: relative; z-index: 1; }
 @media (max-width: 1080px) {
   .split { gap: 50px; }
   .cards--four { grid-template-columns: repeat(2, minmax(0, 1fr)); }
-  .primary-nav ul { gap: 18px; }
+  .primary-nav ul { gap: 14px; }
+  .nav-link { font-size: 10px; letter-spacing: .1em; }
   .footer__grid { grid-template-columns: 1.3fr 1fr 1fr; }
   .footer__brand { grid-column: 1 / -1; }
 }
 
-@media (max-width: 900px) {
+@media (max-width: 1020px) {
   :root { --header-h: 72px; }
   .header__cta { display: none; }
   .nav-toggle { display: block; }
@@ -1308,6 +1317,7 @@ main { position: relative; z-index: 1; }
   .stat:last-child { border-bottom: 0; }
   .social-gallery { grid-template-columns: 1fr; }
   .cta-band__inner { flex-direction: column; align-items: flex-start; }
+  .cta-band__actions { width: 100%; }
   .faq-intro { position: static; }
   .explorer { grid-template-columns: 1fr; }
   .explorer__panels { min-height: 480px; }

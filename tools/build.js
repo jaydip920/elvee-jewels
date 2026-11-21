@@ -20,6 +20,7 @@ const nav = [
   { label: 'Home', href: 'index.html' },
   { label: 'About', href: 'about.html' },
   { label: 'Services', href: 'customer-services.html' },
+  { label: 'For Business', href: 'b2b.html' },
   { label: 'Customize', href: 'customize.html' },
   { label: 'FAQ', href: 'faq.html' },
   { label: 'Contact', href: 'contact.html' }
@@ -27,6 +28,7 @@ const nav = [
 
 const footerCompany = [
   { label: 'About Us', href: 'about.html' },
+  { label: 'For Business', href: 'b2b.html' },
   { label: 'Careers', href: 'careers.html' },
   { label: 'Contact Us', href: 'contact.html' },
   { label: 'Terms and Conditions', href: 'terms.html' }
@@ -34,6 +36,7 @@ const footerCompany = [
 
 const footerCare = [
   { label: 'Customer Services', href: 'customer-services.html' },
+  { label: 'Request a Quote', href: 'b2b.html#rfq' },
   { label: 'Book an Appointment', href: 'appointment.html' },
   { label: 'Customize', href: 'customize.html' },
   { label: 'FAQ', href: 'faq.html' }
@@ -359,7 +362,10 @@ const home = `
   <div class="container quote-band__inner reveal">
     <p class="eyebrow eyebrow--light">Our Promise</p>
     <blockquote>&ldquo;Alvee Jewels — Where Design Meets Precision, and Craftsmanship Meets Trust.&rdquo;</blockquote>
-    <a class="btn btn--gold" href="contact.html">Start a Conversation ${icon.arrow}</a>
+    <div class="quote-band__actions">
+      <a class="btn btn--gold" href="contact.html">Start a Conversation ${icon.arrow}</a>
+      <a class="btn btn--ghost" href="b2b.html">Explore B2B Partnerships ${icon.arrow}</a>
+    </div>
   </div>
 </section>
 
@@ -609,6 +615,123 @@ ${pageHero({ eyebrow: 'Customize', title: 'A piece that is yours alone.', text: 
   </div>
 </section>`;
 
+/* ---------------------------- FOR BUSINESS ------------------------------ */
+const business = `
+${pageHero({ eyebrow: 'For Business', title: 'Manufacturing built for your brand.', text: 'Retailers, wholesalers and private labels partner with Alvee Jewels for diamond, gold and silver jewellery — made with consistent quality and clear communication.', image: 'assets/images/slider-5.webp' })}
+<section class="section">
+  <div class="container">
+    <div class="section__head reveal">
+      <p class="eyebrow">Partnership Models</p>
+      <h2 class="section__title">Choose how we work together.</h2>
+      <p>From ready collections to fully branded production, we shape the arrangement around your business.</p>
+    </div>
+    <div class="cards cards--three">
+      <article class="card reveal"><span class="card__icon">${icon.diamond}</span><h3>Outright Sale</h3><p>Select from our finished diamond, gold and silver designs for your counter or online store.</p></article>
+      <article class="card reveal" style="--delay:.08s"><span class="card__icon">${icon.gold}</span><h3>Private Label</h3><p>Jewellery made to your brand&rsquo;s specification, with consistent finish and presentation.</p></article>
+      <article class="card reveal" style="--delay:.16s"><span class="card__icon">${icon.silver}</span><h3>Job Work</h3><p>Manufacturing support for retailers and wholesalers who supply the design or the brief.</p></article>
+    </div>
+  </div>
+</section>
+
+<section class="section section--tint">
+  <div class="container">
+    <div class="section__head reveal">
+      <p class="eyebrow">What We Can Supply</p>
+      <h2 class="section__title">One atelier, many formats.</h2>
+      <p>Share your requirements and we will guide you on the most practical route from design to delivery.</p>
+    </div>
+    <div class="cards cards--four">
+      <article class="card reveal"><span class="card__icon">${icon.diamond}</span><h3>Diamond</h3><p>Precision-set pieces with carefully matched stones and considered finishing.</p></article>
+      <article class="card reveal" style="--delay:.06s"><span class="card__icon">${icon.gold}</span><h3>Gold</h3><p>14K and 18K formats across classic, contemporary and private-label ranges.</p></article>
+      <article class="card reveal" style="--delay:.12s"><span class="card__icon">${icon.silver}</span><h3>Silver</h3><p>Everyday and fashion-led designs with the same attention to finish.</p></article>
+      <article class="card reveal" style="--delay:.18s"><span class="card__icon">${icon.arrow}</span><h3>Finishing &amp; Packing</h3><p>Surface finishes, presentation and brand-ready packing discussed as part of your brief.</p></article>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    <div class="section__head reveal">
+      <p class="eyebrow">The Process</p>
+      <h2 class="section__title">Clear steps, no surprises.</h2>
+    </div>
+    <ol class="timeline">
+      <li class="timeline__item reveal"><span class="timeline__dot">01</span><div><h3>Share your brief</h3><p>Categories, volumes, target price, designs and branding needs.</p></div></li>
+      <li class="timeline__item reveal" style="--delay:.08s"><span class="timeline__dot">02</span><div><h3>Review &amp; guidance</h3><p>We discuss feasibility, materials and the most practical production route.</p></div></li>
+      <li class="timeline__item reveal" style="--delay:.16s"><span class="timeline__dot">03</span><div><h3>Sample or design approval</h3><p>Concepts, samples and finishing choices are agreed before production.</p></div></li>
+      <li class="timeline__item reveal" style="--delay:.24s"><span class="timeline__dot">04</span><div><h3>Making &amp; checks</h3><p>Our artisans craft, set, finish and inspect each piece.</p></div></li>
+      <li class="timeline__item reveal" style="--delay:.32s"><span class="timeline__dot">05</span><div><h3>Packing &amp; handover</h3><p>Agreed presentation and dispatch details are confirmed in writing.</p></div></li>
+    </ol>
+  </div>
+</section>
+
+<section class="section section--tint" id="rfq">
+  <div class="container">
+    <form class="form-card form-card--wide reveal" data-mailto data-subject="B2B wholesale RFQ" novalidate>
+      <p class="eyebrow">Request a Quote</p>
+      <h2 class="form-card__title">Tell us what your business needs.</h2>
+      <p class="form-card__intro">The more detail you share, the more useful our first response will be.</p>
+      <div class="form-row">
+        <div class="field"><label for="b-name">Full name</label><input id="b-name" name="Name" type="text" autocomplete="name" required></div>
+        <div class="field"><label for="b-company">Company / brand</label><input id="b-company" name="Company" type="text" autocomplete="organization" required></div>
+      </div>
+      <div class="form-row">
+        <div class="field"><label for="b-email">Work email</label><input id="b-email" name="Email" type="email" autocomplete="email" required></div>
+        <div class="field"><label for="b-phone">Phone / WhatsApp</label><input id="b-phone" name="Phone" type="tel" autocomplete="tel" required></div>
+      </div>
+      <div class="form-row">
+        <div class="field"><label for="b-type">Business type</label><select id="b-type" name="Business type"><option>Retailer</option><option>Wholesaler / Distributor</option><option>Private label</option><option>Online seller</option><option>Other</option></select></div>
+        <div class="field"><label for="b-market">Market / country</label><input id="b-market" name="Market" type="text" placeholder="e.g. India, UAE, UK"></div>
+      </div>
+      <div class="form-row">
+        <div class="field"><label for="b-category">Product category</label><select id="b-category" name="Product category"><option>Diamond jewellery</option><option>Gold jewellery</option><option>Silver jewellery</option><option>Mixed categories</option><option>Not sure yet</option></select></div>
+        <div class="field"><label for="b-purity">Purity / material</label><select id="b-purity" name="Purity"><option>14K gold</option><option>18K gold</option><option>925 silver</option><option>Diamond &amp; gold</option><option>To be discussed</option></select></div>
+      </div>
+      <div class="form-row">
+        <div class="field"><label for="b-volume">Estimated monthly volume</label><select id="b-volume" name="Volume"><option>Under 50 pieces</option><option>50 &ndash; 200 pieces</option><option>201 &ndash; 500 pieces</option><option>500+ pieces</option><option>To be discussed</option></select></div>
+        <div class="field"><label for="b-budget">Target price band</label><input id="b-budget" name="Target price band" type="text" placeholder="e.g. &#8377;1,500 &ndash; &#8377;3,000 per piece"></div>
+      </div>
+      <div class="form-row">
+        <div class="field"><label for="b-branding">Branding / packaging</label><select id="b-branding" name="Branding"><option>No branding needed</option><option>Our brand</option><option>Client brand / private label</option><option>Custom packaging required</option><option>To be discussed</option></select></div>
+        <div class="field"><label for="b-timeline">Target timeline</label><select id="b-timeline" name="Timeline"><option>ASAP</option><option>Within 1 month</option><option>1 &ndash; 3 months</option><option>3+ months</option><option>Exploratory</option></select></div>
+      </div>
+      <div class="field"><label for="b-reference">Design reference / link</label><input id="b-reference" name="Design reference" type="text" placeholder="Optional link, style name or reference number"></div>
+      <div class="field"><label for="b-notes">Additional requirements</label><textarea id="b-notes" name="Requirements" rows="5" required placeholder="Share sizes, weights, stone preferences, finishing, checks or anything else we should know..."></textarea></div>
+      <button class="btn btn--gold" type="submit">Send RFQ ${icon.arrow}</button>
+      <p class="form-status" role="status" aria-live="polite"></p>
+      <p class="form-hint">Submitting opens your email app with the details filled in, ready for you to send. Prices and terms are confirmed separately in writing.</p>
+    </form>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container faq-layout">
+    <div class="faq-intro reveal">
+      <p class="eyebrow">Good to know</p>
+      <h2 class="section__title">Before you send a brief.</h2>
+      <p>Nothing on this site is a binding offer. All prices, quantities and delivery terms are agreed directly with our team.</p>
+      <a class="btn btn--outline" href="#rfq">Request a quote ${icon.arrow}</a>
+    </div>
+    <div class="faq-list">
+      <details class="faq-item reveal"><summary>Do you work with private labels?<span class="faq-icon" aria-hidden="true"></span></summary><div class="faq-answer"><p>Yes. We manufacture to partner specifications under private-label arrangements and also support job-work models.</p></div></details>
+      <details class="faq-item reveal" style="--delay:.05s"><summary>What should I include in an RFQ?<span class="faq-icon" aria-hidden="true"></span></summary><div class="faq-answer"><p>Product category, purity, expected volume, target price band, branding needs and any design references. The form above captures all of these.</p></div></details>
+      <details class="faq-item reveal" style="--delay:.1s"><summary>Can you make pieces from our designs?<span class="faq-icon" aria-hidden="true"></span></summary><div class="faq-answer"><p>Share the design, sample or a clear written brief. We will review feasibility and confirm the production route with you.</p></div></details>
+      <details class="faq-item reveal" style="--delay:.15s"><summary>Do you publish a catalogue or price list?<span class="faq-icon" aria-hidden="true"></span></summary><div class="faq-answer"><p>Please request the current line sheet and commercial terms using the catalogue button below. Current ranges and pricing are shared directly after we understand your requirements.</p></div></details>
+      <details class="faq-item reveal" style="--delay:.2s"><summary>When is an order confirmed?<span class="faq-icon" aria-hidden="true"></span></summary><div class="faq-answer"><p>Only after the scope, pricing, quantities and delivery terms are confirmed in writing. Submitting an RFQ does not create a contract.</p></div></details>
+    </div>
+  </div>
+</section>
+
+<section class="cta-band">
+  <div class="container cta-band__inner reveal">
+    <div><p class="eyebrow eyebrow--light">Catalogue &amp; Terms</p><h2>Need the current line sheet?</h2></div>
+    <div class="cta-band__actions">
+      <a class="btn btn--gold" href="mailto:${brand.email}?subject=Catalogue%20request">Request catalogue ${icon.arrow}</a>
+      <a class="btn btn--ghost" href="appointment.html">Book a discussion ${icon.arrow}</a>
+    </div>
+  </div>
+</section>`;
+
 /* -------------------------------- FAQ ---------------------------------- */
 const faq = `
 ${pageHero({ eyebrow: 'FAQ', title: 'Good questions, clear answers.', text: 'A few things people often ask us.', image: 'assets/images/social-banner-1.png' })}
@@ -639,6 +762,7 @@ const pages = [
   ['contact.html', 'Contact Us', 'Contact Alvee Jewels in Surat, India for enquiries, partnerships, custom designs and appointments.', contact],
   ['terms.html', 'Terms and Conditions', 'Review the website terms and conditions for Alvee Jewels.', terms],
   ['customer-services.html', 'Customer Services', 'Repairs, refinishing, quality assurance, private label, job work and order support from Alvee Jewels.', services],
+  ['b2b.html', 'For Business', 'B2B jewellery manufacturing partnerships for retailers, wholesalers and private labels, with a structured wholesale RFQ form.', business],
   ['appointment.html', 'Book an Appointment', 'Request a visit or a call with the Alvee Jewels atelier in Surat, India.', appointment],
   ['customize.html', 'Customize', 'Design a bespoke diamond, gold or silver jewellery piece with the artisans at Alvee Jewels.', customize],
   ['faq.html', 'FAQ', 'Answers to common questions about Alvee Jewels, our jewellery, private-label work and appointments.', faq]
