@@ -49,7 +49,7 @@ Also included: `robots.txt` and `sitemap.xml`.
 - **SEO basics** — per-page titles, meta descriptions, Open Graph tags, JSON-LD, robots.txt and sitemap.xml.
 - **Forms that went nowhere** — forms validate inline and open the visitor's email app with the message prefilled to `info@elvee.in`. No backend required.
 
-The **For Business** page adds partnership models, supply formats, a five-step process, B2B FAQs, a catalogue request CTA and a structured RFQ form covering company, market, category, purity, volume, target price, branding and timeline.
+The **For Business** page adds partnership models, supply formats, a five-step process, B2B FAQs, a catalogue request CTA and a structured RFQ form covering company, market, category, purity, volume, target price, branding and timeline. A downloadable PDF at `assets/docs/who-can-use-alvee.pdf` explains which business types can use the B2B service.
 
 Lighthouse on the homepage and B2B page: **Accessibility 100, Best Practices 100, SEO 100**, with no console errors across all ten pages.
 

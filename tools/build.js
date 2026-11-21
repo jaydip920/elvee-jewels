@@ -729,6 +729,7 @@ ${pageHero({ eyebrow: 'For Business', title: 'Manufacturing built for your brand
     <div><p class="eyebrow eyebrow--light">Catalogue &amp; Terms</p><h2>Need the current line sheet?</h2></div>
     <div class="cta-band__actions">
       <a class="btn btn--gold" href="mailto:${brand.email}?subject=Catalogue%20request">Request catalogue ${icon.arrow}</a>
+      <a class="btn btn--ghost" href="assets/docs/who-can-use-alvee.pdf" download="alvee-b2b-partner-guide.pdf">Download partner guide ${icon.arrow}</a>
       <a class="btn btn--ghost" href="appointment.html">Book a discussion ${icon.arrow}</a>
     </div>
   </div>
