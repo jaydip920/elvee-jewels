@@ -42,13 +42,18 @@ img, svg { display: block; max-width: 100%; }
 img { height: auto; border-radius: var(--radius-sm); }
 a { color: inherit; text-decoration: none; }
 button, input, select, textarea { font: inherit; color: inherit; }
-input, select, textarea {
+input, select, textarea { border-radius: var(--radius-md); }
+input, select {
   height: 50px;
   min-height: 50px;
   max-height: 50px;
-  border-radius: var(--radius-md);
 }
-textarea { resize: none; }
+textarea {
+  height: 110px;
+  min-height: 110px;
+  max-height: 110px;
+  resize: none;
+}
 button { cursor: pointer; border-radius: var(--radius-sm); }
 h1, h2, h3, h4 { font-family: var(--font-display); font-weight: 500; }
 
