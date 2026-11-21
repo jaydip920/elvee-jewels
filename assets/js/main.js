@@ -256,6 +256,50 @@
       });
     });
 
+    /* ------------------- Interactive collections --------------------- */
+    document.querySelectorAll('[data-explorer]').forEach(function (explorer) {
+      var tabs = Array.prototype.slice.call(explorer.querySelectorAll('[role="tab"]'));
+      var panels = Array.prototype.slice.call(explorer.querySelectorAll('[role="tabpanel"]'));
+      if (!tabs.length || !panels.length) return;
+
+      function activate(tab, moveFocus) {
+        tabs.forEach(function (item) {
+          var active = item === tab;
+          item.classList.toggle('is-active', active);
+          item.setAttribute('aria-selected', String(active));
+          item.setAttribute('tabindex', active ? '0' : '-1');
+        });
+
+        var targetId = tab.getAttribute('aria-controls');
+        panels.forEach(function (panel) {
+          var active = panel.id === targetId;
+          panel.hidden = !active;
+          panel.classList.toggle('is-active', active);
+          if (active) {
+            panel.style.animation = 'none';
+            void panel.offsetWidth;
+            panel.style.animation = '';
+          }
+        });
+
+        if (moveFocus) tab.focus();
+      }
+
+      tabs.forEach(function (tab, index) {
+        tab.addEventListener('click', function () { activate(tab, false); });
+        tab.addEventListener('keydown', function (e) {
+          var next = null;
+          if (e.key === 'ArrowDown' || e.key === 'ArrowRight') next = (index + 1) % tabs.length;
+          if (e.key === 'ArrowUp' || e.key === 'ArrowLeft') next = (index - 1 + tabs.length) % tabs.length;
+          if (e.key === 'Home') next = 0;
+          if (e.key === 'End') next = tabs.length - 1;
+          if (next === null) return;
+          e.preventDefault();
+          activate(tabs[next], true);
+        });
+      });
+    });
+
     /* ----------------------- Smooth anchor links ---------------------- */
     document.querySelectorAll('a[href^="#"]').forEach(function (link) {
       var id = link.getAttribute('href');

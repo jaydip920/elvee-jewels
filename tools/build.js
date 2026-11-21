@@ -269,28 +269,65 @@ const home = `
   <div class="container">
     <div class="section__head reveal">
       <p class="eyebrow">Our Craft</p>
-      <h2 class="section__title">Precious metals, perfected.</h2>
-      <p>Three dedicated specialties, one uncompromising standard of purity, finishing and design integrity.</p>
+      <h2 class="section__title">Explore our collections.</h2>
+      <p>Choose a metal to see how our artisans shape it — from first sketch to final polish.</p>
     </div>
-    <div class="cards cards--three">
-      <article class="card reveal" style="--delay:.06s">
-        <span class="card__icon">${icon.diamond}</span>
-        <h3>Diamond Jewellery</h3>
-        <p>Intricately designed and precision-set to perfection, where every facet is given the attention it deserves.</p>
-        <a class="text-link" href="customize.html">Explore ${icon.arrow}</a>
-      </article>
-      <article class="card reveal" style="--delay:.14s">
-        <span class="card__icon">${icon.gold}</span>
-        <h3>Gold Jewellery</h3>
-        <p>Crafted in 14K and 18K purity, reflecting both tradition and trend in every carefully finished form.</p>
-        <a class="text-link" href="customize.html">Explore ${icon.arrow}</a>
-      </article>
-      <article class="card reveal" style="--delay:.22s">
-        <span class="card__icon">${icon.silver}</span>
-        <h3>Silver Jewellery</h3>
-        <p>Modern, affordable and elegantly styled for everyday wear, without ever compromising on craft.</p>
-        <a class="text-link" href="customize.html">Explore ${icon.arrow}</a>
-      </article>
+    <div class="explorer reveal" data-explorer>
+      <div class="explorer__tabs" role="tablist" aria-label="Jewellery collections" aria-orientation="vertical">
+        <button class="explorer-tab is-active" type="button" role="tab" id="tab-diamond" aria-controls="panel-diamond" aria-selected="true" tabindex="0" data-key="diamond">
+          <span class="explorer-tab__num">01</span>
+          <span class="explorer-tab__icon">${icon.diamond}</span>
+          <span class="explorer-tab__text"><strong>Diamond</strong><small>Intricate brilliance, precision set.</small></span>
+          <span class="explorer-tab__arrow">${icon.arrow}</span>
+        </button>
+        <button class="explorer-tab" type="button" role="tab" id="tab-gold" aria-controls="panel-gold" aria-selected="false" tabindex="-1" data-key="gold">
+          <span class="explorer-tab__num">02</span>
+          <span class="explorer-tab__icon">${icon.gold}</span>
+          <span class="explorer-tab__text"><strong>Gold</strong><small>14K &amp; 18K, tradition and trend.</small></span>
+          <span class="explorer-tab__arrow">${icon.arrow}</span>
+        </button>
+        <button class="explorer-tab" type="button" role="tab" id="tab-silver" aria-controls="panel-silver" aria-selected="false" tabindex="-1" data-key="silver">
+          <span class="explorer-tab__num">03</span>
+          <span class="explorer-tab__icon">${icon.silver}</span>
+          <span class="explorer-tab__text"><strong>Silver</strong><small>Modern, affordable, everyday elegant.</small></span>
+          <span class="explorer-tab__arrow">${icon.arrow}</span>
+        </button>
+      </div>
+      <div class="explorer__panels">
+        <div class="explorer-panel is-active" role="tabpanel" id="panel-diamond" aria-labelledby="tab-diamond" data-key="diamond">
+          <img class="explorer-panel__img" src="assets/images/slider-3.webp" alt="Diamond jewellery by Elvee Jewels" width="1600" height="900" loading="lazy" decoding="async">
+          <div class="explorer-panel__overlay" aria-hidden="true"></div>
+          <div class="explorer-panel__content">
+            <p class="eyebrow eyebrow--light">Collection 01</p>
+            <h3>Diamond Jewellery</h3>
+            <p>Intricately designed and precision-set to perfection, where every facet is given the attention it deserves.</p>
+            <ul class="explorer-panel__specs"><li>Precision setting</li><li>Facet matching</li><li>Quality checked</li></ul>
+            <a class="btn btn--gold" href="customize.html">Explore custom options ${icon.arrow}</a>
+          </div>
+        </div>
+        <div class="explorer-panel" role="tabpanel" id="panel-gold" aria-labelledby="tab-gold" data-key="gold" hidden>
+          <img class="explorer-panel__img" src="assets/images/slider-2.webp" alt="Gold jewellery crafted at the Elvee atelier" width="1600" height="900" loading="lazy" decoding="async">
+          <div class="explorer-panel__overlay" aria-hidden="true"></div>
+          <div class="explorer-panel__content">
+            <p class="eyebrow eyebrow--light">Collection 02</p>
+            <h3>Gold Jewellery</h3>
+            <p>Crafted in 14K and 18K purity, reflecting both tradition and trend in every carefully finished form.</p>
+            <ul class="explorer-panel__specs"><li>14K &amp; 18K purity</li><li>Classic &amp; modern forms</li><li>Consistent finishing</li></ul>
+            <a class="btn btn--gold" href="customize.html">Explore custom options ${icon.arrow}</a>
+          </div>
+        </div>
+        <div class="explorer-panel" role="tabpanel" id="panel-silver" aria-labelledby="tab-silver" data-key="silver" hidden>
+          <img class="explorer-panel__img" src="assets/images/slider-4.webp" alt="Silver and contemporary designs by Elvee" width="1600" height="900" loading="lazy" decoding="async">
+          <div class="explorer-panel__overlay" aria-hidden="true"></div>
+          <div class="explorer-panel__content">
+            <p class="eyebrow eyebrow--light">Collection 03</p>
+            <h3>Silver Jewellery</h3>
+            <p>Modern, affordable and elegantly styled for everyday wear, without ever compromising on craft.</p>
+            <ul class="explorer-panel__specs"><li>Everyday elegance</li><li>Contemporary styling</li><li>Carefully finished</li></ul>
+            <a class="btn btn--gold" href="customize.html">Explore custom options ${icon.arrow}</a>
+          </div>
+        </div>
+      </div>
     </div>
   </div>
 </section>
