@@ -18,6 +18,8 @@ folder were captured from the finished static site at 1440px wide (the cover is
 | Tags | `Jewellery Website` `Logo Design` `Brand Identity` `Luxury Branding` `Web Design` `UI Design` `UX Design` `E-commerce` `B2B` `Wholesale` `Gold Jewellery` `Diamond Jewellery` `Private Label` `Responsive Design` `GSAP` `ScrollTrigger` `Accessibility` `Static Website` `Surat` `India` |
 | Project URL | https://github.com/jaydip920/elvee-jewels |
 | Featured image | `00-cover.png` |
+| Interaction video | `video/alvee-interaction-reel.mp4` — 35 sec, 1440 × 900, H.264, 24 fps, no audio |
+| Video poster | `video/alvee-interaction-reel-poster.png` |
 
 > If you enable GitHub Pages for the repo, replace the Project URL with the live
 > `https://jaydip920.github.io/elvee-jewels/` link before publishing.
@@ -86,7 +88,28 @@ Accessibility, Best Practices and SEO on the key pages.
 
 ---
 
-## 3. Image upload order
+## 3. Interaction video
+
+A 35-second screen-recording reel is included in `video/`:
+
+- `alvee-interaction-reel.mp4` — Behance-ready H.264 MP4, 1440 × 900, 24 fps, silent.
+- `alvee-interaction-reel-poster.png` — poster frame for the video thumbnail.
+- `alvee-interaction-reel-contact-sheet.png` — six-frame overview for quick review.
+
+It walks through the new prism logo on hover, the hero carousel, the collections
+explorer tabs, GSAP scroll motion and counters, the B2B RFQ form and the FAQ accordion.
+
+**Video caption:**
+
+> A 35-second interaction reel: the Alvee Prism logo, hero carousel, accessible
+> collections explorer, GSAP scroll motion and the full B2B RFQ journey.
+
+Upload the video first or immediately after the cover, then use the poster frame as
+its thumbnail. Behance will autoplay the MP4 in the project page.
+
+---
+
+## 4. Image upload order
 
 Upload in this order so the story reads clearly on the Behance project page:
 
@@ -107,7 +130,7 @@ first and use the shorter crops immediately after it.
 
 ---
 
-## 4. Short caption / social teaser
+## 5. Short caption / social teaser
 
 > Redesigned ALVEE Jewels as a modern-luxury static website — interactive collections,
 > GSAP scroll motion, accessible forms and a complete B2B RFQ journey for retailers,
@@ -115,7 +138,7 @@ first and use the shorter crops immediately after it.
 
 ---
 
-## 5. Before you publish
+## 6. Before you publish
 
 - Replace the placeholder legal wording on `terms.html` with approved legal copy.
 - Replace the Instagram and Pinterest homepage links with real ALVEE profile URLs.

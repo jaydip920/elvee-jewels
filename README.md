@@ -56,7 +56,8 @@ Lighthouse on the homepage and B2B page: **Accessibility 100, Best Practices 100
 ## Behance portfolio kit
 
 - `behance-assets/` contains presentation-ready screenshots: a 1400 × 1050 cover, hero and explorer crops, full-page Home and For Business captures, RFQ/contact/FAQ details and the partner-guide CTA.
-- `behance-assets/BEHANCE-DETAILS.md` contains a ready-to-paste title, subtitle, tags, description, image order and captions, plus pre-publish notes.
+- `behance-assets/video/alvee-interaction-reel.mp4` is a 35-second H.264 interaction reel covering the logo hover, hero carousel, collections explorer, GSAP scroll effects, RFQ form and FAQ accordion. A poster frame and contact sheet are included.
+- `behance-assets/BEHANCE-DETAILS.md` contains a ready-to-paste title, subtitle, tags, description, video caption, image order and captions, plus pre-publish notes.
 
 ## Animations added
 
