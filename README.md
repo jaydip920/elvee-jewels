@@ -53,6 +53,11 @@ The **For Business** page adds partnership models, supply formats, a five-step p
 
 Lighthouse on the homepage and B2B page: **Accessibility 100, Best Practices 100, SEO 100**, with no console errors across all ten pages.
 
+## Behance portfolio kit
+
+- `behance-assets/` contains presentation-ready screenshots: a 1400 × 1050 cover, hero and explorer crops, full-page Home and For Business captures, RFQ/contact/FAQ details and the partner-guide CTA.
+- `behance-assets/BEHANCE-DETAILS.md` contains a ready-to-paste title, subtitle, tags, description, image order and captions, plus pre-publish notes.
+
 ## Animations added
 
 - Crossfading hero carousel with slow Ken Burns zoom, arrows, dots, autoplay, hover/focus pause and keyboard arrows.
