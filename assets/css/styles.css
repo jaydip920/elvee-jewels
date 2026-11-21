@@ -1090,6 +1090,7 @@ svg {
   transition-delay: var(--delay, 0s);
 }
 .reveal.is-visible { opacity: 1; transform: none; }
+html.gsap-active .reveal { transition: none; }
 
 /* ---------------------- Curves & shape motion ------------------------- */
 .page-shell { position: relative; overflow-x: clip; }

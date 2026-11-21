@@ -191,6 +191,8 @@ ${body}
 </main>
 ${footer()}
 </div>
+<script src="assets/js/gsap.min.js" defer></script>
+<script src="assets/js/ScrollTrigger.min.js" defer></script>
 <script src="assets/js/main.js" defer></script>
 </body>
 </html>

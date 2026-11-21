@@ -1,5 +1,6 @@
 /* Alvee Jewels — interaction layer
- * No external libraries, no network requests, no runtime APIs.
+ * Scroll effects use GSAP ScrollTrigger (vendored locally), with an
+ * IntersectionObserver fallback if the library is unavailable.
  */
 (function () {
   'use strict';
@@ -12,6 +13,21 @@
     /* ---------------------------- Year -------------------------------- */
     var yearEl = document.getElementById('year');
     if (yearEl) yearEl.textContent = String(new Date().getFullYear());
+
+    /* ---------------------- GSAP / ScrollTrigger ---------------------- */
+    var hasGSAP = typeof window.gsap !== 'undefined' && typeof window.ScrollTrigger !== 'undefined';
+    var ST = null;
+
+    if (hasGSAP) {
+      try {
+        window.gsap.registerPlugin(window.ScrollTrigger);
+        ST = window.ScrollTrigger;
+        if (!reduceMotion) document.documentElement.classList.add('gsap-active');
+      } catch (e) {
+        hasGSAP = false;
+        ST = null;
+      }
+    }
 
     /* -------------------------- Mobile nav ---------------------------- */
     var navToggle = document.querySelector('.nav-toggle');
@@ -121,11 +137,33 @@
     /* ------------------------- Scroll reveal -------------------------- */
     var revealItems = Array.prototype.slice.call(document.querySelectorAll('.reveal'));
 
-    if ('IntersectionObserver' in window) {
+    function markVisible(el) { el.classList.add('is-visible'); }
+
+    if (reduceMotion) {
+      revealItems.forEach(markVisible);
+    } else if (hasGSAP && ST) {
+      revealItems.forEach(function (el) {
+        var delay = parseFloat(window.getComputedStyle(el).getPropertyValue('--delay')) || 0;
+        markVisible(el);
+
+        window.gsap.fromTo(el,
+          { opacity: 0, y: 26 },
+          {
+            opacity: 1,
+            y: 0,
+            duration: 0.8,
+            delay: delay,
+            ease: 'power3.out',
+            clearProps: 'transform',
+            scrollTrigger: { trigger: el, start: 'top 88%', once: true }
+          }
+        );
+      });
+    } else if ('IntersectionObserver' in window) {
       var revealObserver = new IntersectionObserver(function (entries, observer) {
         entries.forEach(function (entry) {
           if (entry.isIntersecting) {
-            entry.target.classList.add('is-visible');
+            markVisible(entry.target);
             observer.unobserve(entry.target);
           }
         });
@@ -133,18 +171,28 @@
 
       revealItems.forEach(function (el) { revealObserver.observe(el); });
     } else {
-      revealItems.forEach(function (el) { el.classList.add('is-visible'); });
+      revealItems.forEach(markVisible);
     }
 
     /* --------------------------- Counters ----------------------------- */
     var counters = Array.prototype.slice.call(document.querySelectorAll('[data-count]'));
 
-    function animateCounter(el) {
-      var target = Number(el.getAttribute('data-count')) || 0;
-      var suffix = el.getAttribute('data-suffix') || '';
+    function counterValues(el) {
+      return {
+        target: Number(el.getAttribute('data-count')) || 0,
+        suffix: el.getAttribute('data-suffix') || ''
+      };
+    }
 
+    function setCounterFinal(el) {
+      var values = counterValues(el);
+      el.textContent = values.target + values.suffix;
+    }
+
+    function animateCounter(el) {
+      var values = counterValues(el);
       if (reduceMotion) {
-        el.textContent = target + suffix;
+        setCounterFinal(el);
         return;
       }
 
@@ -154,13 +202,36 @@
       function frame(now) {
         var progress = Math.min((now - start) / duration, 1);
         var eased = 1 - Math.pow(1 - progress, 3);
-        el.textContent = Math.round(target * eased) + suffix;
+        el.textContent = Math.round(values.target * eased) + values.suffix;
         if (progress < 1) requestAnimationFrame(frame);
       }
       requestAnimationFrame(frame);
     }
 
-    if ('IntersectionObserver' in window && counters.length) {
+    if (reduceMotion) {
+      counters.forEach(setCounterFinal);
+    } else if (hasGSAP && ST && counters.length) {
+      counters.forEach(function (el) {
+        var values = counterValues(el);
+        ST.create({
+          trigger: el,
+          start: 'top 85%',
+          once: true,
+          onEnter: function () {
+            var count = { value: 0 };
+            window.gsap.to(count, {
+              value: values.target,
+              duration: 1.5,
+              ease: 'power3.out',
+              onUpdate: function () {
+                el.textContent = Math.round(count.value) + values.suffix;
+              },
+              onComplete: function () { setCounterFinal(el); }
+            });
+          }
+        });
+      });
+    } else if ('IntersectionObserver' in window && counters.length) {
       var counterObserver = new IntersectionObserver(function (entries, observer) {
         entries.forEach(function (entry) {
           if (entry.isIntersecting) {
@@ -172,9 +243,7 @@
 
       counters.forEach(function (el) { counterObserver.observe(el); });
     } else {
-      counters.forEach(function (el) {
-        el.textContent = (Number(el.getAttribute('data-count')) || 0) + (el.getAttribute('data-suffix') || '');
-      });
+      counters.forEach(setCounterFinal);
     }
 
     /* ------------------- Progress bar, header, to-top ------------------ */
@@ -183,10 +252,12 @@
     var toTop = document.querySelector('.to-top');
     var ticking = false;
 
-    function updateScrollUI() {
-      var y = window.pageYOffset || document.documentElement.scrollTop || 0;
-      var max = document.documentElement.scrollHeight - window.innerHeight;
-      var percent = max > 0 ? (y / max) * 100 : 0;
+    function updateScrollUI(y, percent) {
+      if (typeof y !== 'number') y = window.pageYOffset || document.documentElement.scrollTop || 0;
+      if (typeof percent !== 'number') {
+        var max = document.documentElement.scrollHeight - window.innerHeight;
+        percent = max > 0 ? (y / max) * 100 : 0;
+      }
 
       if (progress) progress.style.width = percent + '%';
       if (header) header.classList.toggle('is-scrolled', y > 10);
@@ -194,13 +265,46 @@
       ticking = false;
     }
 
-    window.addEventListener('scroll', function () {
-      if (!ticking) {
-        window.requestAnimationFrame(updateScrollUI);
-        ticking = true;
+    if (hasGSAP && ST) {
+      function syncScrollUI(self) {
+        updateScrollUI(self.scroll(), self.progress * 100);
       }
-    }, { passive: true });
-    updateScrollUI();
+
+      ST.create({
+        start: 0,
+        end: 'max',
+        onUpdate: syncScrollUI,
+        onRefresh: syncScrollUI
+      });
+      updateScrollUI();
+    } else {
+      window.addEventListener('scroll', function () {
+        if (!ticking) {
+          window.requestAnimationFrame(updateScrollUI);
+          ticking = true;
+        }
+      }, { passive: true });
+      updateScrollUI();
+    }
+
+    /* ---------------------- Scroll parallax --------------------------- */
+    if (hasGSAP && ST && !reduceMotion) {
+      document.querySelectorAll('.page-hero__inner').forEach(function (el) {
+        window.gsap.fromTo(el,
+          { y: 0 },
+          {
+            y: 46,
+            ease: 'none',
+            scrollTrigger: {
+              trigger: el.closest('.page-hero'),
+              start: 'top top',
+              end: 'bottom top',
+              scrub: 0.6
+            }
+          }
+        );
+      });
+    }
 
     if (toTop) {
       toTop.addEventListener('click', function () {

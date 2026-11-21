@@ -33,7 +33,8 @@ Also included: `robots.txt` and `sitemap.xml`.
 - `tools/build.js` — single source of truth for the shared header, footer, SEO head tags and all page content. Run `node tools/build.js` after editing it to regenerate the static HTML files.
 - `tools/serve.js` — tiny zero-dependency local static server.
 - `assets/css/styles.css` — all styling, responsive rules and motion preferences.
-- `assets/js/main.js` — carousel, scroll reveals, counters, mobile nav, progress bar, back-to-top and form handling.
+- `assets/js/main.js` — carousel, GSAP ScrollTrigger scroll effects, counters, mobile nav, progress bar, back-to-top and form handling.
+- `assets/js/gsap.min.js` and `assets/js/ScrollTrigger.min.js` — vendored GSAP 3.13.0 files used by the scroll layer; no CDN request is made at runtime.
 - `assets/images/` — locally stored copies of the original site's logo, banners and slider images, so nothing depends on a remote host.
 
 ## Issues fixed from the original site
@@ -55,7 +56,7 @@ Lighthouse on the homepage and B2B page: **Accessibility 100, Best Practices 100
 ## Animations added
 
 - Crossfading hero carousel with slow Ken Burns zoom, arrows, dots, autoplay, hover/focus pause and keyboard arrows.
-- Scroll-triggered fade-and-rise reveals with staggered delays.
+- GSAP ScrollTrigger-driven fade-and-rise reveals with staggered delays, count-up counters, page-header parallax and a scroll-linked progress bar (with an IntersectionObserver fallback).
 - Count-up statistics.
 - Animated specialty marquee.
 - Card hover lift with a gold shine sweep.
