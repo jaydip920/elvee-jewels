@@ -73,6 +73,7 @@ All motion is disabled automatically when the visitor has **Reduce Motion** enab
 ## Customisation notes
 
 - Brand colours, fonts and the corner-radius scale (`--radius-sm: 8px`, `--radius-md: 16px`, `--radius-lg: 24px`) live in the `:root` block at the top of `assets/css/styles.css`. Small buttons/controls use 8px, standard buttons, framed images and all form fields use 16px, and large images/hero/social tiles 24px. Circular controls intentionally keep `50%`. All `input` and `select` elements are capped at 50px tall, while `textarea` elements are fixed at 110px and scroll internally when needed.
+- Selects use a locally embedded SVG chevron positioned 18px from the right edge, with 48px right padding so long option text never crowds the arrow.
 - Contact details appear in `tools/build.js` (`brand` object) — edit there and regenerate.
 - The Terms page contains clearly marked placeholder legal copy; replace it with approved wording before launch.
 - The B2B RFQ is email-based. Partner accounts, gated price lists and order tracking would require a backend or a hosted form/CRM service.
