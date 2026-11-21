@@ -15,12 +15,15 @@ folder were captured from the finished static site at 1440px wide (the cover is
 | Category | Web Design |
 | Creative Fields | Web Design, UI/UX, Graphic Design |
 | Tools Used | HTML5, CSS3, JavaScript, GSAP ScrollTrigger, Lighthouse, Chrome DevTools, Node.js |
-| Tags | `Jewellery Website` `Luxury Branding` `Web Design` `UI Design` `UX Design` `E-commerce` `B2B` `Wholesale` `Gold Jewellery` `Diamond Jewellery` `Private Label` `Responsive Design` `GSAP` `ScrollTrigger` `Accessibility` `Static Website` `Surat` `India` |
+| Tags | `Jewellery Website` `Logo Design` `Brand Identity` `Luxury Branding` `Web Design` `UI Design` `UX Design` `E-commerce` `B2B` `Wholesale` `Gold Jewellery` `Diamond Jewellery` `Private Label` `Responsive Design` `GSAP` `ScrollTrigger` `Accessibility` `Static Website` `Surat` `India` |
 | Project URL | https://github.com/jaydip920/elvee-jewels |
 | Featured image | `00-cover.png` |
 
 > If you enable GitHub Pages for the repo, replace the Project URL with the live
 > `https://jaydip920.github.io/elvee-jewels/` link before publishing.
+
+The standalone vector lockup is available at `../assets/images/alvee-logo.svg` if you
+want to include a logo close-up as an extra Behance image.
 
 ---
 
@@ -42,6 +45,9 @@ trade buyers, even though a large part of the business is B2B.
 
 ### What I built
 
+- **A modernised logo system** — a faceted ALVEE monogram built as clean vector SVG,
+  with a jewel-cut centre, double gold frame and coordinated favicon. The mark and
+  wordmark are used consistently in the site header, footer and partner guide PDF.
 - **A complete 10-page static site** — Home, About, Careers, Contact, Customer
   Services, FAQ, Appointment, Customize, Terms and a new For Business page.
 - **An interactive collections explorer** — Diamond, Gold and Silver ranges can be

@@ -54,6 +54,26 @@ const icon = {
   youtube: '<svg viewBox="0 0 24 24" aria-hidden="true"><rect x="2" y="5" width="20" height="14" rx="4"/><path d="m10 9 5 3-5 3V9Z"/></svg>'
 };
 
+/* Distinct gradient IDs so the header and footer marks can coexist on one page. */
+function brandMark(id) {
+  return `<svg class="brand__mark" viewBox="0 0 56 56" aria-hidden="true" focusable="false">
+    <defs>
+      <linearGradient id="alvee-gold-${id}" x1="0" y1="0" x2="1" y2="1">
+        <stop offset="0" stop-color="#F6E7BE"/>
+        <stop offset=".48" stop-color="#C9A227"/>
+        <stop offset="1" stop-color="#8B6A1B"/>
+      </linearGradient>
+    </defs>
+    <rect x="1.5" y="1.5" width="53" height="53" rx="15" fill="#10100F" stroke="url(#alvee-gold-${id})" stroke-width="1.4"/>
+    <rect x="6" y="6" width="44" height="44" rx="11" fill="none" stroke="#C9A227" stroke-opacity=".28" stroke-width=".8"/>
+    <path d="M15 45 28 14 41 45" fill="none" stroke="url(#alvee-gold-${id})" stroke-width="3.4" stroke-linecap="round" stroke-linejoin="round"/>
+    <path d="M20 32h16" fill="none" stroke="#EAD6A0" stroke-width="2.4" stroke-linecap="round"/>
+    <path class="brand__gem" d="M28 27.3 32.2 32 28 36.7 23.8 32Z" fill="#10100F" stroke="#F6E7BE" stroke-width="1.3" stroke-linejoin="round"/>
+    <path d="M28 27.3v9.4M23.8 32h8.4" fill="none" stroke="#C9A227" stroke-opacity=".7" stroke-width=".6"/>
+    <circle cx="44" cy="16" r="1.5" fill="#F6E7BE"/>
+  </svg>`;
+}
+
 function header(active) {
   const links = nav.map(item => {
     const isActive = item.href === active ? ' aria-current="page"' : '';
@@ -65,7 +85,7 @@ function header(active) {
 <header class="site-header" id="top">
   <div class="container header__inner">
     <a class="brand" href="index.html">
-      <span class="brand__mark">A</span>
+      ${brandMark('header')}
       <span class="brand__text"><strong>ALVEE</strong><small>JEWELS</small></span>
     </a>
     <button class="nav-toggle" type="button" aria-label="Open menu" aria-expanded="false" aria-controls="primary-nav">
@@ -93,7 +113,7 @@ function footer() {
   <div class="container footer__grid">
     <div class="footer__brand">
       <a class="brand brand--footer" href="index.html">
-        <span class="brand__mark">A</span>
+        ${brandMark('footer')}
         <span class="brand__text"><strong>ALVEE</strong><small>JEWELS</small></span>
       </a>
       <p>Where design meets precision, and craftsmanship meets trust.</p>
