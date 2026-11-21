@@ -41,5 +41,5 @@ http.createServer((req, res) => {
     fs.createReadStream(filePath).pipe(res);
   });
 }).listen(PORT, () => {
-  console.log(`Elvee Jewels preview: http://localhost:${PORT}`);
+  console.log(`Alvee Jewels preview: http://localhost:${PORT}`);
 });

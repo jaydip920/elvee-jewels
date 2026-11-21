@@ -1,6 +1,6 @@
-# Elvee Jewels — redesigned static website
+# Alvee Jewels — redesigned static website
 
-A modern-luxury redesign of the Elvee Jewels site, built as plain HTML, CSS and JavaScript with no build step required to view it.
+A modern-luxury redesign of the Alvee Jewels site, built as plain HTML, CSS and JavaScript with no build step required to view it.
 
 ## Preview
 
@@ -71,5 +71,5 @@ All motion is disabled automatically when the visitor has **Reduce Motion** enab
 - Brand colours, fonts and the corner-radius scale (`--radius-sm: 8px`, `--radius-md: 16px`, `--radius-lg: 24px`) live in the `:root` block at the top of `assets/css/styles.css`. Small buttons/controls use 8px, standard buttons and framed images 16px, and large images/hero/social tiles 24px. Circular controls intentionally keep `50%`.
 - Contact details appear in `tools/build.js` (`brand` object) — edit there and regenerate.
 - The Terms page contains clearly marked placeholder legal copy; replace it with approved wording before launch.
-- Social links currently point to the platform homepages. Replace them with the real Elvee profile URLs in `tools/build.js`.
+- Social links currently point to the platform homepages. Replace them with the real Alvee profile URLs in `tools/build.js`.
 - If deploying under a subpath, adjust asset paths and the `url` values in `sitemap.xml`.

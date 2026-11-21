@@ -1,4 +1,4 @@
-/* Static site generator for the Elvee Jewels redesign.
+/* Static site generator for the Alvee Jewels redesign.
  * Run: node tools/build.js
  * Output: fully static HTML files in the project root.
  */
@@ -8,8 +8,8 @@ const path = require('path');
 const ROOT = path.join(__dirname, '..');
 
 const brand = {
-  name: 'Elvee Jewels',
-  legal: 'Elvee Jewels Private Limited',
+  name: 'Alvee Jewels',
+  legal: 'Alvee Jewels Private Limited',
   phone: '+91 2616105100',
   phoneHref: '+912616105100',
   email: 'info@elvee.in',
@@ -62,8 +62,8 @@ function header(active) {
 <header class="site-header" id="top">
   <div class="container header__inner">
     <a class="brand" href="index.html">
-      <span class="brand__mark">E</span>
-      <span class="brand__text"><strong>ELVEE</strong><small>JEWELS</small></span>
+      <span class="brand__mark">A</span>
+      <span class="brand__text"><strong>ALVEE</strong><small>JEWELS</small></span>
     </a>
     <button class="nav-toggle" type="button" aria-label="Open menu" aria-expanded="false" aria-controls="primary-nav">
       <span></span><span></span><span></span>
@@ -90,8 +90,8 @@ function footer() {
   <div class="container footer__grid">
     <div class="footer__brand">
       <a class="brand brand--footer" href="index.html">
-        <span class="brand__mark">E</span>
-        <span class="brand__text"><strong>ELVEE</strong><small>JEWELS</small></span>
+        <span class="brand__mark">A</span>
+        <span class="brand__text"><strong>ALVEE</strong><small>JEWELS</small></span>
       </a>
       <p>Where design meets precision, and craftsmanship meets trust.</p>
       <div class="footer__socials" aria-label="Social media">${socials}</div>
@@ -173,7 +173,7 @@ function layout({ file, title, description, body }) {
   <meta property="og:title" content="${title} | ${brand.name}">
   <meta property="og:description" content="${description}">
   <meta property="og:image" content="assets/images/slider-1.webp">
-  <link rel="icon" href="assets/images/webLogo.png" type="image/png">
+  <link rel="icon" href="assets/images/favicon.svg" type="image/svg+xml">
   <link rel="stylesheet" href="assets/css/styles.css">
   <script type="application/ld+json">${ld}</script>
   <title>${title} | ${brand.name}</title>
@@ -196,22 +196,22 @@ ${footer()}
 
 /* ------------------------------- HOME ---------------------------------- */
 const home = `
-<section class="hero" id="home" aria-label="Elvee Jewels featured collection">
+<section class="hero" id="home" aria-label="Alvee Jewels featured collection">
   <div class="hero__slides" data-carousel>
     <div class="hero__slide is-active" style="--bg:linear-gradient(135deg,#2a2118,#0d0d0c)">
-      <span class="hero__img-wrap"><img class="hero__img" src="assets/images/slider-1.webp" alt="Elvee Jewels signature collection" width="1600" height="900" fetchpriority="high" decoding="async"></span>
+      <span class="hero__img-wrap"><img class="hero__img" src="assets/images/slider-1.webp" alt="Alvee Jewels signature collection" width="1600" height="900" fetchpriority="high" decoding="async"></span>
     </div>
     <div class="hero__slide" style="--bg:linear-gradient(135deg,#33261a,#100f0d)">
-      <span class="hero__img-wrap"><img class="hero__img" src="assets/images/slider-2.webp" alt="Gold jewellery crafted at the Elvee atelier" width="1600" height="900" loading="lazy" decoding="async"></span>
+      <span class="hero__img-wrap"><img class="hero__img" src="assets/images/slider-2.webp" alt="Gold jewellery crafted at the Alvee atelier" width="1600" height="900" loading="lazy" decoding="async"></span>
     </div>
     <div class="hero__slide" style="--bg:linear-gradient(135deg,#1d1c1a,#0b0b0a)">
-      <span class="hero__img-wrap"><img class="hero__img" src="assets/images/slider-3.webp" alt="Diamond jewellery by Elvee Jewels" width="1600" height="900" loading="lazy" decoding="async"></span>
+      <span class="hero__img-wrap"><img class="hero__img" src="assets/images/slider-3.webp" alt="Diamond jewellery by Alvee Jewels" width="1600" height="900" loading="lazy" decoding="async"></span>
     </div>
     <div class="hero__slide" style="--bg:linear-gradient(135deg,#3a2c1d,#12100d)">
-      <span class="hero__img-wrap"><img class="hero__img" src="assets/images/slider-4.webp" alt="Silver and contemporary designs by Elvee" width="1600" height="900" loading="lazy" decoding="async"></span>
+      <span class="hero__img-wrap"><img class="hero__img" src="assets/images/slider-4.webp" alt="Silver and contemporary designs by Alvee" width="1600" height="900" loading="lazy" decoding="async"></span>
     </div>
     <div class="hero__slide" style="--bg:linear-gradient(135deg,#241d16,#0c0c0b)">
-      <span class="hero__img-wrap"><img class="hero__img" src="assets/images/slider-5.webp" alt="Finishing and polishing at Elvee Jewels" width="1600" height="900" loading="lazy" decoding="async"></span>
+      <span class="hero__img-wrap"><img class="hero__img" src="assets/images/slider-5.webp" alt="Finishing and polishing at Alvee Jewels" width="1600" height="900" loading="lazy" decoding="async"></span>
     </div>
   </div>
   <div class="hero__overlay" aria-hidden="true"></div>
@@ -251,7 +251,7 @@ const home = `
   <div class="container split">
     <div class="split__media reveal">
       <div class="frame">
-        <span class="frame__media"><img src="assets/images/heritage-banner.png" alt="Inside the Elvee Jewels atelier" width="720" height="480" loading="lazy" decoding="async"></span>
+        <span class="frame__media"><img src="assets/images/heritage-banner.png" alt="Inside the Alvee Jewels atelier" width="720" height="480" loading="lazy" decoding="async"></span>
       </div>
       <div class="split__badge"><span>100%</span><small>In-house<br>craftsmanship</small></div>
     </div>
@@ -259,7 +259,7 @@ const home = `
       <p class="eyebrow reveal">Who We Are</p>
       <h2 class="section__title reveal" style="--delay:.08s">From the first sketch to the final polish.</h2>
       <p class="reveal" style="--delay:.14s">Every step of the journey takes place within the walls of our atelier, where master artisans breathe life into raw materials, transforming them into timeless works of art.</p>
-      <p class="reveal" style="--delay:.2s">At Elvee Jewels Private Limited, we turn imagination into timeless elegance. As one of India&rsquo;s leading jewellery manufacturing houses, we craft each piece with a blend of traditional technique and contemporary innovation — a harmonious balance between heritage and modernity.</p>
+      <p class="reveal" style="--delay:.2s">At Alvee Jewels Private Limited, we turn imagination into timeless elegance. As one of India&rsquo;s leading jewellery manufacturing houses, we craft each piece with a blend of traditional technique and contemporary innovation — a harmonious balance between heritage and modernity.</p>
       <a class="text-link reveal" style="--delay:.26s" href="about.html">More about our story ${icon.arrow}</a>
     </div>
   </div>
@@ -295,7 +295,7 @@ const home = `
       </div>
       <div class="explorer__panels">
         <div class="explorer-panel is-active" role="tabpanel" id="panel-diamond" aria-labelledby="tab-diamond" data-key="diamond">
-          <img class="explorer-panel__img" src="assets/images/slider-3.webp" alt="Diamond jewellery by Elvee Jewels" width="1600" height="900" loading="lazy" decoding="async">
+          <img class="explorer-panel__img" src="assets/images/slider-3.webp" alt="Diamond jewellery by Alvee Jewels" width="1600" height="900" loading="lazy" decoding="async">
           <div class="explorer-panel__overlay" aria-hidden="true"></div>
           <div class="explorer-panel__content">
             <p class="eyebrow eyebrow--light">Collection 01</p>
@@ -306,7 +306,7 @@ const home = `
           </div>
         </div>
         <div class="explorer-panel" role="tabpanel" id="panel-gold" aria-labelledby="tab-gold" data-key="gold" hidden>
-          <img class="explorer-panel__img" src="assets/images/slider-2.webp" alt="Gold jewellery crafted at the Elvee atelier" width="1600" height="900" loading="lazy" decoding="async">
+          <img class="explorer-panel__img" src="assets/images/slider-2.webp" alt="Gold jewellery crafted at the Alvee atelier" width="1600" height="900" loading="lazy" decoding="async">
           <div class="explorer-panel__overlay" aria-hidden="true"></div>
           <div class="explorer-panel__content">
             <p class="eyebrow eyebrow--light">Collection 02</p>
@@ -317,7 +317,7 @@ const home = `
           </div>
         </div>
         <div class="explorer-panel" role="tabpanel" id="panel-silver" aria-labelledby="tab-silver" data-key="silver" hidden>
-          <img class="explorer-panel__img" src="assets/images/slider-4.webp" alt="Silver and contemporary designs by Elvee" width="1600" height="900" loading="lazy" decoding="async">
+          <img class="explorer-panel__img" src="assets/images/slider-4.webp" alt="Silver and contemporary designs by Alvee" width="1600" height="900" loading="lazy" decoding="async">
           <div class="explorer-panel__overlay" aria-hidden="true"></div>
           <div class="explorer-panel__content">
             <p class="eyebrow eyebrow--light">Collection 03</p>
@@ -358,7 +358,7 @@ const home = `
 <section class="quote-band">
   <div class="container quote-band__inner reveal">
     <p class="eyebrow eyebrow--light">Our Promise</p>
-    <blockquote>&ldquo;Elvee Jewels — Where Design Meets Precision, and Craftsmanship Meets Trust.&rdquo;</blockquote>
+    <blockquote>&ldquo;Alvee Jewels — Where Design Meets Precision, and Craftsmanship Meets Trust.&rdquo;</blockquote>
     <a class="btn btn--gold" href="contact.html">Start a Conversation ${icon.arrow}</a>
   </div>
 </section>
@@ -370,12 +370,12 @@ const home = `
       <h2 class="section__title">From the atelier to your feed.</h2>
     </div>
     <div class="social-gallery">
-      <a class="social-tile reveal" href="https://www.instagram.com/" target="_blank" rel="noopener noreferrer" aria-label="View Elvee on Instagram">
-        <img src="assets/images/social-banner-1.png" alt="Elvee Jewels social feature" width="1440" height="1800" loading="lazy" decoding="async">
+      <a class="social-tile reveal" href="https://www.instagram.com/" target="_blank" rel="noopener noreferrer" aria-label="View Alvee on Instagram">
+        <img src="assets/images/social-banner-1.png" alt="Alvee Jewels social feature" width="1440" height="1800" loading="lazy" decoding="async">
         <span>Instagram ${icon.arrow}</span>
       </a>
-      <a class="social-tile reveal" style="--delay:.12s" href="https://www.pinterest.com/" target="_blank" rel="noopener noreferrer" aria-label="View Elvee on Pinterest">
-        <img src="assets/images/social-banner-2.png" alt="Elvee Jewels design inspiration" width="735" height="919" loading="lazy" decoding="async">
+      <a class="social-tile reveal" style="--delay:.12s" href="https://www.pinterest.com/" target="_blank" rel="noopener noreferrer" aria-label="View Alvee on Pinterest">
+        <img src="assets/images/social-banner-2.png" alt="Alvee Jewels design inspiration" width="735" height="919" loading="lazy" decoding="async">
         <span>Pinterest ${icon.arrow}</span>
       </a>
     </div>
@@ -407,11 +407,11 @@ ${pageHero({ eyebrow: 'Our Company', title: 'A heritage of making.', text: 'Insi
       <p class="eyebrow reveal">Who We Are</p>
       <h2 class="section__title reveal" style="--delay:.08s">Crafted where it is conceived.</h2>
       <p class="reveal" style="--delay:.14s">From the first sketch to the final polish, every step of the journey takes place within the walls of our atelier. Master artisans breathe life into raw materials, transforming them into timeless works of art with a blend of traditional techniques and contemporary innovation.</p>
-      <p class="reveal" style="--delay:.2s">At Elvee Jewels Private Limited, we turn imagination into timeless elegance. As one of India&rsquo;s leading jewellery manufacturing houses, we specialise in diamond, gold and silver jewellery that celebrates beauty, precision and craftsmanship.</p>
+      <p class="reveal" style="--delay:.2s">At Alvee Jewels Private Limited, we turn imagination into timeless elegance. As one of India&rsquo;s leading jewellery manufacturing houses, we specialise in diamond, gold and silver jewellery that celebrates beauty, precision and craftsmanship.</p>
       <p class="reveal" style="--delay:.26s">We cater to retailers, wholesalers and private labels across India and global markets through outright sale and job-work models. Each creation undergoes rigorous quality checks to ensure unmatched purity, finishing and design integrity.</p>
     </div>
     <div class="split__media reveal">
-      <div class="frame frame--tall"><span class="frame__media"><img src="assets/images/social-banner-2.png" alt="A close look at Elvee Jewels design work" width="735" height="919" loading="lazy" decoding="async"></span></div>
+      <div class="frame frame--tall"><span class="frame__media"><img src="assets/images/social-banner-2.png" alt="A close look at Alvee Jewels design work" width="735" height="919" loading="lazy" decoding="async"></span></div>
     </div>
   </div>
 </section>
@@ -435,7 +435,7 @@ ${pageHero({ eyebrow: 'Our Company', title: 'A heritage of making.', text: 'Insi
 
 /* ------------------------------ CAREERS -------------------------------- */
 const careers = `
-${pageHero({ eyebrow: 'Careers', title: 'Make things that last.', text: 'Join the hands and minds behind Elvee Jewels.', image: 'assets/images/social-banner-2.png' })}
+${pageHero({ eyebrow: 'Careers', title: 'Make things that last.', text: 'Join the hands and minds behind Alvee Jewels.', image: 'assets/images/social-banner-2.png' })}
 <section class="section">
   <div class="container split">
     <div class="split__content">
@@ -444,7 +444,7 @@ ${pageHero({ eyebrow: 'Careers', title: 'Make things that last.', text: 'Join th
       <p class="reveal" style="--delay:.14s">Our studio brings designers, goldsmiths, setters, polishers and quality specialists together under one roof. We value steady hands, curious minds and people who care about the difference between good and exceptional.</p>
       <p class="reveal" style="--delay:.2s">If you take pride in craft and want to grow with a manufacturing house that works for India and the world, we would like to hear from you.</p>
     </div>
-    <div class="split__media reveal"><div class="frame"><span class="frame__media"><img src="assets/images/heritage-banner.png" alt="Artisans working in the Elvee atelier" width="720" height="480" loading="lazy" decoding="async"></span></div></div>
+    <div class="split__media reveal"><div class="frame"><span class="frame__media"><img src="assets/images/heritage-banner.png" alt="Artisans working in the Alvee atelier" width="720" height="480" loading="lazy" decoding="async"></span></div></div>
   </div>
 </section>
 <section class="section section--tint">
@@ -497,17 +497,17 @@ ${pageHero({ eyebrow: 'Legal', title: 'Terms and Conditions', text: 'Please revi
   <div class="container prose">
     <p class="notice"><strong>Note:</strong> This is placeholder copy for the redesigned website and should be reviewed and replaced with your approved legal terms before going live.</p>
     <h2>1. About this website</h2>
-    <p>This website is operated by ${brand.legal}. Throughout these terms, &ldquo;we&rdquo;, &ldquo;us&rdquo; and &ldquo;our&rdquo; refer to Elvee Jewels. By using this website you agree to these terms.</p>
+    <p>This website is operated by ${brand.legal}. Throughout these terms, &ldquo;we&rdquo;, &ldquo;us&rdquo; and &ldquo;our&rdquo; refer to Alvee Jewels. By using this website you agree to these terms.</p>
     <h2>2. Use of the site</h2>
     <p>You agree to use this website only for lawful purposes and in a way that does not infringe the rights of, or restrict or inhibit the use of this website by, any third party.</p>
     <h2>3. Intellectual property</h2>
-    <p>All content, designs, imagery, trademarks and other intellectual property on this website belong to Elvee Jewels or its licensors. You may not reproduce, distribute or create derivative works from them without written permission.</p>
+    <p>All content, designs, imagery, trademarks and other intellectual property on this website belong to Alvee Jewels or its licensors. You may not reproduce, distribute or create derivative works from them without written permission.</p>
     <h2>4. Product information</h2>
     <p>We take care to describe our diamond, gold and silver jewellery accurately. Product details, purities and availability are indicative and may change. Nothing on this website constitutes a binding offer to sell.</p>
     <h2>5. Enquiries and orders</h2>
     <p>Submitting an enquiry or appointment request does not create a contract. All orders, custom commissions, wholesale arrangements and job-work terms are confirmed separately in writing.</p>
     <h2>6. Limitation of liability</h2>
-    <p>To the fullest extent permitted by law, Elvee Jewels shall not be liable for any indirect, incidental or consequential loss arising from your use of this website.</p>
+    <p>To the fullest extent permitted by law, Alvee Jewels shall not be liable for any indirect, incidental or consequential loss arising from your use of this website.</p>
     <h2>7. Contact</h2>
     <p>If you have questions about these terms, contact us at <a href="mailto:${brand.email}">${brand.email}</a> or call <a href="tel:${brand.phoneHref}">${brand.phone}</a>.</p>
   </div>
@@ -633,15 +633,15 @@ ${pageHero({ eyebrow: 'FAQ', title: 'Good questions, clear answers.', text: 'A f
 </section>`;
 
 const pages = [
-  ['index.html', 'Home', 'Elvee Jewels crafts diamond, gold and silver jewellery in Surat, India — blending heritage technique with contemporary design.', home],
-  ['about.html', 'About Us', 'Learn about the Elvee Jewels atelier, our heritage of craftsmanship and our standards of precision.', about],
-  ['careers.html', 'Careers', 'Explore careers at Elvee Jewels and join the team behind our handcrafted diamond, gold and silver jewellery.', careers],
-  ['contact.html', 'Contact Us', 'Contact Elvee Jewels in Surat, India for enquiries, partnerships, custom designs and appointments.', contact],
-  ['terms.html', 'Terms and Conditions', 'Review the website terms and conditions for Elvee Jewels.', terms],
-  ['customer-services.html', 'Customer Services', 'Repairs, refinishing, quality assurance, private label, job work and order support from Elvee Jewels.', services],
-  ['appointment.html', 'Book an Appointment', 'Request a visit or a call with the Elvee Jewels atelier in Surat, India.', appointment],
-  ['customize.html', 'Customize', 'Design a bespoke diamond, gold or silver jewellery piece with the artisans at Elvee Jewels.', customize],
-  ['faq.html', 'FAQ', 'Answers to common questions about Elvee Jewels, our jewellery, private-label work and appointments.', faq]
+  ['index.html', 'Home', 'Alvee Jewels crafts diamond, gold and silver jewellery in Surat, India — blending heritage technique with contemporary design.', home],
+  ['about.html', 'About Us', 'Learn about the Alvee Jewels atelier, our heritage of craftsmanship and our standards of precision.', about],
+  ['careers.html', 'Careers', 'Explore careers at Alvee Jewels and join the team behind our handcrafted diamond, gold and silver jewellery.', careers],
+  ['contact.html', 'Contact Us', 'Contact Alvee Jewels in Surat, India for enquiries, partnerships, custom designs and appointments.', contact],
+  ['terms.html', 'Terms and Conditions', 'Review the website terms and conditions for Alvee Jewels.', terms],
+  ['customer-services.html', 'Customer Services', 'Repairs, refinishing, quality assurance, private label, job work and order support from Alvee Jewels.', services],
+  ['appointment.html', 'Book an Appointment', 'Request a visit or a call with the Alvee Jewels atelier in Surat, India.', appointment],
+  ['customize.html', 'Customize', 'Design a bespoke diamond, gold or silver jewellery piece with the artisans at Alvee Jewels.', customize],
+  ['faq.html', 'FAQ', 'Answers to common questions about Alvee Jewels, our jewellery, private-label work and appointments.', faq]
 ];
 
 pages.forEach(([file, title, description, body]) => {

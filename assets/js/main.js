@@ -1,4 +1,4 @@
-/* Elvee Jewels — interaction layer
+/* Alvee Jewels — interaction layer
  * No external libraries, no network requests, no runtime APIs.
  */
 (function () {
@@ -246,7 +246,7 @@
         });
 
         var subject = form.getAttribute('data-subject') || 'Website enquiry';
-        var body = lines.join('\n') + '\n\nSent from the Elvee Jewels website.';
+        var body = lines.join('\n') + '\n\nSent from the Alvee Jewels website.';
         var href = 'mailto:' + CONTACT_EMAIL +
           '?subject=' + encodeURIComponent(subject) +
           '&body=' + encodeURIComponent(body);
