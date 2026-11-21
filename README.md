@@ -57,6 +57,7 @@ Lighthouse on the homepage: **Accessibility 100, Best Practices 100, SEO 100**, 
 - Animated specialty marquee.
 - Card hover lift with a gold shine sweep.
 - Hover zoom-in on all content images and hero slides, clipped inside their frames.
+- Interactive collections explorer on the homepage: accessible tabs swap large preview imagery, copy, spec chips and CTAs with a crossfade.
 - Animated side-curve rails with flowing dashed paths and floating ring/diamond/dot shapes.
 - Large drifting arcs in the hero and page headers, plus curved outlines on section edges.
 - Animated scroll-progress bar and back-to-top button.
